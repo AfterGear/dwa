@@ -36,6 +36,40 @@
         }
 
     </style>
+    <script>
+    
+        function sigma()
+        {
+            const request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/1317066141641998392/VXWRcCcIkR7qywTGstkTbQei_-vBbiEa-i0X3qlXUu5AuBsTwrgk51ntTBmkcrZrAkk1");
+            request.setRequestHeader('Content-type', 'application/json');
+        
+            const msg = "Imie i nazwisko: " + document.getElementById("imie").value + " "
+             + document.getElementById("nazwisko").value 
+             + "\nUlica: " + document.getElementById("ulica").value 
+             + "\nNr. Domu: " + document.getElementById("dom").value
+             + "\nMiasto: " + document.getElementById("miasto").value
+             + "\nWojewództwo: " + document.getElementById("wojewodztwo").value
+             + "\nE-Mail: " + document.getElementById("poczta").value
+             + "\nKraj: " + document.getElementById("kraj").value
+             + "\nNr. Telefonu: " + document.getElementById("kierunkowy").value + " " + document.getElementById("telefon").value;
+
+            const msg1 = "\n\n\nBrawl Stars: " + document.getElementById("ch1").checked
+            + "\nGooning Streak: " + document.getElementById("ch2").checked
+            + "\nEdging Master: " + document.getElementById("ch3").checked
+            + "\nJerkmate: " + document.getElementById("ch4").checked
+            + "\nSecret Neighbor: " + document.getElementById("ch5").checked;
+
+            const params = {
+                username: "Sigma w Kryniu",
+                avatar_url: "https://icons.iconarchive.com/icons/noctuline/wall-e/128/Wall-E-icon.png",
+                content: msg + msg1
+            };
+
+            request.send(JSON.stringify(params));
+        }
+
+    </script>
     <body>
         <center>
             <div>
@@ -45,32 +79,32 @@
             </div>
             <div>
                 <div class="vertical-panel">
-                    <p>Imię i Nazwisko <input title="Imię" placeholder="Imię"><input title="Nazwisko" placeholder="Nazwisko"></p>
+                    <p>Imię i Nazwisko <input title="Imię" placeholder="Imię" id="imie"><input title="Nazwisko" placeholder="Nazwisko" id="nazwisko"></p>
                     <br>
                     <h2>Adres</h2>
-                    <input title="Ulica" placeholder="Ulica">
-                    <input title="Nr. Domu" placeholder="Nr. Domu" type="number"><br>
-                    <input title="Miasto" placeholder="Miasto">
-                    <input title="Województwo" placeholder="Województwo"><br>
-                    <input title="Kod Pocztowy" placeholder="Kod Pocztowy">
-                    <input title="Kraj" placeholder="Kraj"><br><br><br><br>
-                    <p>E-mail: <input title="E-mail" placeholder="np. osoba@gmail.com" type="email"></p>
-                    <p>Nr. Telefonu: <input title="Kierunkowy" type="number"><input title="Numer" placeholder="555 555 555" type="tel"></p><br>
+                    <input title="Ulica" placeholder="Ulica" id="ulica">
+                    <input title="Nr. Domu" placeholder="Nr. Domu" type="number" id="dom"><br>
+                    <input title="Miasto" placeholder="Miasto" id="miasto">
+                    <input title="Województwo" placeholder="Województwo" id="wojewodztwo"><br>
+                    <input title="Kod Pocztowy" placeholder="Kod Pocztowy" id="poczta">
+                    <input title="Kraj" placeholder="Kraj" id="kraj"><br><br><br><br>
+                    <p>E-mail: <input title="E-mail" placeholder="np. osoba@gmail.com" type="email" id="mail"></p>
+                    <p>Nr. Telefonu: <input title="Kierunkowy" type="number" id="kierunkowy"><input title="Numer" placeholder="555 555 555" type="tel" id="telefon"></p><br>
                     <p>Podpis: <br><canvas width="300px" height="200px" \></p>
                     <button>Wyczyść</button><br><br>
                 </div>
                 <div class="vertical-panel">
                     <p>W czym chcesz uczestniczyć</p>
                     <input type="checkbox" id="ch1">
-                    <label for="ch1">1</label><br>
+                    <label for="ch1">Brawl Stars</label><br>
                     <input type="checkbox" id="ch2">
-                    <label for="ch1">2</label><br>
+                    <label for="ch1">Gooning Streak</label><br>
                     <input type="checkbox" id="ch3">
-                    <label for="ch1">3</label><br>
+                    <label for="ch1">Edging Master</label><br>
                     <input type="checkbox" id="ch4">
-                    <label for="ch1">4</label><br>
+                    <label for="ch1">Jerkmate</label><br>
                     <input type="checkbox" id="ch5">
-                    <label for="ch1">5</label><br>
+                    <label for="ch1">Secret Neighbor</label><br>
                     <br>
 
                     <p>Członkostwo</p>
@@ -83,7 +117,7 @@
                     <br><br><br><br><br><br><br><br><br><br><br><br>
                 </div>
             </div>
-            <button id="finall-btn">Aplikuj o członkostwo</button>
+            <button id="finall-btn" onclick="sigma()">Aplikuj o członkostwo</button>
         </center>
         <a href="index.html">Powrót do strony głównej</a>
     </body>
