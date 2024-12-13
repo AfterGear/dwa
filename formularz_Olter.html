@@ -9,10 +9,82 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #786685;
         }
+
+        input {
+            margin: 5px;
+        }
+
+        canvas {
+            border: 2px solid black;
+        }
+
+        #finall-btn {
+            height: 40px;
+            width: 250px;
+            font-size: 22px;
+        }
+
+        .vertical-panel {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .vertical-panel p {
+            margin: 2px;
+        }
+
     </style>
     <body>
-        <h3>Tutaj będzie formularz</h3>
+        <center>
+            <div>
+                <h1>Aplikacja członkowska</h1>
+                <h3>By złożyć aplikacje członkowską, wypełnij poniższe pola.</h3>
+                <br><br>
+            </div>
+            <div>
+                <div class="vertical-panel">
+                    <p>Imię i Nazwisko <input title="Imię" placeholder="Imię"><input title="Nazwisko" placeholder="Nazwisko"></p>
+                    <br>
+                    <h2>Adres</h2>
+                    <input title="Ulica" placeholder="Ulica">
+                    <input title="Nr. Domu" placeholder="Nr. Domu" type="number"><br>
+                    <input title="Miasto" placeholder="Miasto">
+                    <input title="Województwo" placeholder="Województwo"><br>
+                    <input title="Kod Pocztowy" placeholder="Kod Pocztowy">
+                    <input title="Kraj" placeholder="Kraj"><br><br><br><br>
+                    <p>E-mail: <input title="E-mail" placeholder="np. osoba@gmail.com" type="email"></p>
+                    <p>Nr. Telefonu: <input title="Kierunkowy" type="number"><input title="Numer" placeholder="555 555 555" type="tel"></p><br>
+                    <p>Podpis: <br><canvas width="300px" height="200px" \></p>
+                    <button>Wyczyść</button><br><br>
+                </div>
+                <div class="vertical-panel">
+                    <p>W czym chcesz uczestniczyć</p>
+                    <input type="checkbox" id="ch1">
+                    <label for="ch1">1</label><br>
+                    <input type="checkbox" id="ch2">
+                    <label for="ch1">2</label><br>
+                    <input type="checkbox" id="ch3">
+                    <label for="ch1">3</label><br>
+                    <input type="checkbox" id="ch4">
+                    <label for="ch1">4</label><br>
+                    <input type="checkbox" id="ch5">
+                    <label for="ch1">5</label><br>
+                    <br>
+
+                    <p>Członkostwo</p>
+                    <input type="radio" name="czlonkostwo" id="rad1">
+                    <label for="rad1">Normalne</label><br>
+                    <input type="radio" name="czlonkostwo" id="rad2">
+                    <label for="rad2">Członkostwo+</label><br>
+                    <input type="radio" name="czlonkostwo" id="rad3">
+                    <label for="rad3">Członkostwo++</label><br>
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+            <button id="finall-btn">Aplikuj o członkostwo</button>
+        </center>
         <a href="index.html">Powrót do strony głównej</a>
     </body>
 </html>
